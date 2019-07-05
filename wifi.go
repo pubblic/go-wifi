@@ -26,11 +26,10 @@ func command(name string, args ...string) {
 	cmd.Stderr = os.Stderr
 	err := cmd.Run()
 	if err, ok := err.(*exec.ExitError); ok {
-		os.Exit(err.ExitCode())
+		perror(err.ExitCode(), err.Error())
 	}
 	if err != nil {
-		fmt.Fprintln(os.Stderr, err)
-		os.Exit(1)
+		perror(1, err.Error())
 	}
 }
 
