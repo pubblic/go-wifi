@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+[ -f "icon.ico" ] && icon_arg="-ico icon.ico"
+
+rsrc -manifest wifi.manifest -o wifi.syso $icon_arg &&
+	go build
