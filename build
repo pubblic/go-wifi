@@ -6,4 +6,4 @@ which src >/dev/null 2>/dev/null
 [ $? -eq 0 ] && go get -u github.com/akavel/rsrc
 
 rsrc -manifest wifi.manifest -o wifi.syso $icon_arg &&
-	go build
+	go build -o wifi.exe
